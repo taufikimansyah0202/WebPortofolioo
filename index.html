@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Muhammad Taufiq</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+html{
+  scroll-behavior:smooth;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#0f172a;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* Aurora Background */
+body::before{
+  content:'';
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  z-index:-1;
+  background:
+  radial-gradient(circle at 20% 20%, rgba(59,130,246,.18), transparent 25%),
+  radial-gradient(circle at 80% 30%, rgba(168,85,247,.18), transparent 25%),
+  radial-gradient(circle at 50% 80%, rgba(14,165,233,.18), transparent 25%);
+}
+
+/* Navbar */
+.navbar{
+  background:rgba(15,23,42,.9)!important;
+  backdrop-filter:blur(12px);
+  box-shadow:0 5px 20px rgba(0,0,0,.3);
+}
+
+.navbar-brand{
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+.nav-link{
+  transition:.3s;
+}
+
+.nav-link:hover{
+  color:#60a5fa!important;
+}
+
+/* Jumbotron */
+.jumbotron{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:
+  radial-gradient(circle at top right,#2563eb,#0f172a 70%);
+}
+
+.jumbotron img{
+  border:5px solid #60a5fa;
+  box-shadow:0 0 30px rgba(96,165,250,.6);
+  transition:.4s;
+}
+
+.jumbotron img:hover{
+  transform:scale(1.05);
+}
+
+.jumbotron h1{
+  font-size:3.5rem;
+  font-weight:700;
+  text-shadow:0 0 15px rgba(96,165,250,.7);
+}
+
+.lead{
+  color:#cbd5e1;
+}
+
+.social-icon a{
+  color:white;
+  font-size:2rem;
+  margin:0 10px;
+  transition:.3s;
+}
+
+.social-icon a:hover{
+  color:#60a5fa;
+  transform:translateY(-5px);
+}
+
+/* Button */
+.btn-custom{
+  background:#2563eb;
+  color:white;
+  border:none;
+  border-radius:50px;
+  padding:12px 28px;
+  transition:.3s;
+}
+
+.btn-custom:hover{
+  background:#3b82f6;
+  transform:translateY(-3px);
+}
+
+.btn-outline-custom{
+  border:2px solid white;
+  color:white;
+  border-radius:50px;
+  padding:12px 28px;
+}
+
+.btn-outline-custom:hover{
+  background:white;
+  color:#0f172a;
+}
+
+/* Section */
+section{
+  padding:100px 0;
+}
+
+section h2{
+  text-align:center;
+  margin-bottom:50px;
+  color:#60a5fa;
+  font-weight:700;
+}
+
+/* About */
+#about{
+  background:#111827;
+}
+
+/* Stats */
+.stats{
+  padding:40px 0;
+}
+
+.stat-box{
+  text-align:center;
+  padding:20px;
+}
+
+.stat-box h1{
+  color:#60a5fa;
+  font-size:3rem;
+}
+
+/* Skills */
+#skills{
+  background:#0b1120;
+}
+
+.progress{
+  height:25px;
+  border-radius:20px;
+}
+
+.progress-bar{
+  font-weight:600;
+}
+
+/* Education */
+#education{
+  background:#111827;
+}
+
+/* Project */
+#projects{
+  background:#0f172a;
+}
+
+.card{
+  background:#1e293b;
+  color:white;
+  border:none;
+  border-radius:20px;
+  overflow:hidden;
+  transition:.4s;
+  box-shadow:0 5px 20px rgba(0,0,0,.3);
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 25px rgba(59,130,246,.5);
+}
+
+.project-img{
+  height:250px;
+  object-fit:cover;
+  transition:.5s;
+}
+
+.card:hover .project-img{
+  transform:scale(1.1);
+}
+
+/* Testimonial */
+#testimonial{
+  background:#111827;
+}
+
+/* Contact */
+#contact{
+  background:#0f172a;
+}
+
+form{
+  background:#1e293b;
+  padding:35px;
+  border-radius:20px;
+  box-shadow:0 0 20px rgba(0,0,0,.3);
+}
+
+.form-control{
+  background:#0f172a;
+  border:1px solid #334155;
+  color:white;
+}
+
+.form-control:focus{
+  background:#0f172a;
+  color:white;
+  border-color:#60a5fa;
+  box-shadow:0 0 15px rgba(96,165,250,.4);
+}
+
+/* Footer */
+footer{
+  background:#020617;
+  padding:30px;
+}
+
+/* Back To Top */
+.top-btn{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  width:55px;
+  height:55px;
+  background:#2563eb;
+  color:white;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-decoration:none;
+  font-size:24px;
+  box-shadow:0 0 15px rgba(59,130,246,.5);
+  z-index:999;
+}
+
+.top-btn:hover{
+  background:#3b82f6;
+  color:white;
+}
+
+/* Animation */
+.fade-up{
+  animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+form{
+  background:#1e293b;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 0 20px rgba(0,0,0,.3);
+}
+.form-control{
+  background:#1e293b;
+  border:1px solid #334155;
+  color:white;
+  border-radius:12px;
+}
+
+.form-control:focus{
+  background:#1e293b;
+  color:white;
+  border-color:#3b82f6;
+  box-shadow:0 0 10px rgba(59,130,246,.4);
+}
+
+/* Button */
+.btn-primary{
+  background:#2563eb;
+  border:none;
+  border-radius:30px;
+  padding:10px 25px;
+  font-weight:600;
+}
+
+.btn-primary:hover{
+  background:#3b82f6;
+}
+
+/* Footer */
+footer{
+  background:#020617;
+  padding:25px;
+}
+
+
+footer a{
+  text-decoration:none;
+}
+
+footer a:hover{
+  color:#60a5fa!important;
+}
+
+/* Wave */
+svg{
+  display:block;
+}
+
+#skills{
+  background:#0b1120;
+}
+
+#skills h5{
+  color:white;
+}
+
+.stars{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-image:
+  radial-gradient(white 1px, transparent 1px);
+  background-size:50px 50px;
+  opacity:.08;
+  pointer-events:none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">ANALYSIS PROJECTS</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#projects">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Jumbotron -->
+<section class="jumbotron text-center">
+  <img src="image.jpeg" alt="Profile"
+    width="200"
+    class="rounded-circle img-thumbnail">
+
+  <h1 class="display-4 mt-3">Muhammad Taufiq</h1>
+
+  <p class="lead">Mahasiswa Sistem Informasi</p>
+
+  <div class="mt-3">
+    <a href="#" class="text-white mx-2">
+      <i class="bi bi-instagram fs-3"></i>
+    </a>
+
+    <a href="#" class="text-white mx-2">
+      <i class="bi bi-github fs-3"></i>
+    </a>
+
+    <a href="#" class="text-white mx-2">
+      <i class="bi bi-linkedin fs-3"></i>
+
+      <div class="mt-4">
+  <a href="#projects" class="btn btn-custom me-2">
+    View Projects
+  </a>
+
+  <a href="#contact" class="btn btn-outline-custom">
+    Contact Me
+  </a>
+</div>
+    </a>
+  </div>
+
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="#111827"
+      d="M0,96L40,106.7C80,117,160,139,240,154.7C320,171,400,181,480,160C560,139,640,85,720,53.3C800,21,880,11,960,16C1040,21,1120,43,1200,58.7C1280,75,1360,85,1400,90.7L1440,96L1440,320L0,320Z">
+    </path>
+  </svg>
+</section>
+
+<!-- About -->
+<section id="about">
+  <div class="container">
+    <div class="row text-center mb-4">
+      <div class="col">
+        <h2>About Me</h2>
+      </div>
+    </div>
+
+    <div class="row justify-content-center text-center">
+      <div class="col-md-8">
+        <p>
+          Halo! Saya Muhammad Taufiq, seorang mahasiswa Sistem Informasi yang memiliki minat dalam bidang Web Development, Quality Assurance, dan Teknologi Informasi. Saya senang mempelajari teknologi baru serta mengembangkan solusi digital yang bermanfaat.
+        </p>
+        <div class="stars"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-5 text-info">My Skills
+    </h2>
+
+    <div class="row text-center mt-5">
+  <div class="col-md-4">
+    <h1 class="text-info">10+</h1>
+    <p>Projects</p>
+  </div>
+
+  <div class="col-md-4">
+    <h1 class="text-info">5+</h1>
+    <p>Certificates</p>
+  </div>
+
+  <div class="col-md-4">
+    <h1 class="text-info">3+</h1>
+    <p>Years Learning</p>
+  </div>
+</div>
+    
+
+    <div class="row text-center">
+
+      <div class="col-md-3 mb-4">
+        <i class="bi bi-filetype-html fs-1 text-danger"></i>
+        <h5 class="mt-3">HTML</h5>
+      </div>
+
+      <div class="col-md-3 mb-4">
+        <i class="bi bi-filetype-css fs-1 text-primary"></i>
+        <h5 class="mt-3">CSS</h5>
+      </div>
+
+      <div class="col-md-3 mb-4">
+        <i class="bi bi-bootstrap fs-1 text-purple"></i>
+        <h5 class="mt-3">Bootstrap</h5>
+      </div>
+
+      <div class="col-md-3 mb-4">
+        <i class="bi bi-database-fill fs-1 text-success"></i>
+        <h5 class="mt-3">MySQL</h5>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+  <div class="container">
+    <h2 class="text-center mb-5">My Projects</h2>
+
+    <div class="row">
+
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="bootstrap.jpg" class="card-img-top project-img" alt="">
+          <div class="card-body">
+            <p class="card-text">Project Portfolio Website menggunakan Bootstrap 5.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="webkopi.jpg" class="card-img-top project-img" alt="">
+          <div class="card-body">
+            <p class="card-text">Sistem Informasi berbasis web untuk kebutuhan UMKM.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="imagess.jpg" class="card-img-top project-img" alt="">
+          <div class="card-body">
+            <p class="card-text">Implementasi CRM untuk meningkatkan loyalitas pelanggan.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="imagesdss.jpg" class="card-img-top project-img" alt="">
+          <div class="card-body">
+            <p class="card-text">Dashboard monitoring data dengan Bootstrap.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="kopi.png" class="card-img-top project-img" alt="">
+          <div class="card-body">
+            <p class="card-text">Aplikasi perhitungan pembayaran dan bonus pembelian.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="container">
+
+    <div class="row text-center mb-4">
+      <div class="col">
+        <h2>Contact Me</h2>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+
+        <form>
+
+          <div class="mb-3">
+            <label class="form-label">Nama Lengkap</label>
+            <input type="text" class="form-control">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Pesan</label>
+            <textarea class="form-control" rows="4"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            Kirim Pesan
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center text-white">
+  <p class="mb-1">
+    Created with  by Muhammad Taufiq
+  </p>
+
+  <small>
+    © 2026 All Rights Reserved
+  </small>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
